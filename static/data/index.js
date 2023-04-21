@@ -1,32 +1,3 @@
-webpackJsonp([0],[
-/* 0 */,
-/* 1 */,
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(8)
-
-var Component = __webpack_require__(1)(
-  /* script */
-  __webpack_require__(6),
-  /* template */
-  __webpack_require__(14),
-  /* scopeId */
-  "data-v-6b4cf18a",
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 3 */,
-/* 4 */
-/***/ (function(module, exports) {
-
 module.exports = {
   list: [{
       "id": 1,
@@ -182,82 +153,104 @@ module.exports = {
     },
     {
       "id": 12,
-      "title": "",
+      "title": "关于css加载会造成哪些阻塞，完整且正确的答案是？",
       "items": [
-        "",
-        "",
-        "",
-        ""
+        "dom树的渲染阻塞",
+        "dom树的解析阻塞",
+        "1.dom树的渲染阻塞，2.js加载的阻塞",
+        "html的阻塞"
       ],
       "answer": 2,
-      "reason": ""
-    }, {
+      "reason": `1.css加载不会阻塞DOM树的解析
+      2.css加载会阻塞DOM树的渲染
+      3.css加载会阻塞后面js语句的执行、`
+    },
+    {
       "id": 13,
-      "title": "",
+      "title": "关于CSS加载速度的优化问题完整的是？",
       "items": [
-        "",
-        "",
-        "",
-        ""
+        "使用CDN",
+        "对css进行压缩",
+        "减少http请求数，将多个css文件合并",
+        "1.使用CDN,2.对css进行压缩，3.合理的使用缓存，4.减少http请求数，将多个css文件合并"
       ],
       "answer": 3,
-      "reason": ""
-    }, {
+      "reason": `1.使用CDN(因为CDN会根据你的网络状况，替你挑选最近的一个具有缓存内容的节点为你提供资源，因此可以减少加载时间)
+      2.对css进行压缩(可以用很多打包工具，比如webpack,gulp等，也可以通过开启gzip压缩)
+      3.合理的使用缓存(设置cache-control,expires,以及E-tag都是不错的，不过要注意一个问题，就是文件更新后，你要避免缓存而带来的影响。其中一个解决防范是在文件名字后面加一个版本号)
+      4.减少http请求数，将多个css文件合并，或者是干脆直接写成内联样式(内联样式的一个缺点就是不能缓存)`
+    },
+    {
       "id": 14,
-      "title": "",
+      "title": "关于前端渲染十万条数据，以下说法完整的是？",
       "items": [
-        "",
-        "",
-        "",
-        ""
+        "分页",
+        "1.分页，2.createDocumentFragment文档碎片，3.使用requestAnimationFrame优化，按帧对网页进行重绘，4.根据视口高做懒加载",
+        "根据视口高做懒加载",
+        "createDocumentFragment文档碎片"
       ],
       "answer": 1,
-      "reason": ""
-    }, {
+      "reason": `1.分页;
+      2.createDocumentFragment文档碎片;
+      3.使用requestAnimationFrame优化;
+      按帧对网页进行重绘;
+      4.根据视口高做懒加载;`
+    },
+    {
       "id": 15,
-      "title": "",
+      "title": "单位vw/vh与单位百分百的区别？",
       "items": [
-        "",
-        "",
-        "",
-        ""
+        "100%是相对于视口的宽度和高度",
+        "vw/vh是相对于包含它的最近的父元素的高度和宽度",
+        "都一样，没区别",
+        "100%是相对于包含它的最近的父元素的高度和宽度，vw/vh是相对于视口的宽度和高度"
       ],
       "answer": 3,
-      "reason": ""
-    }, {
+      "reason": "100%是相对于包含它的最近的父元素的高度和宽度，vw/vh是相对于视口的宽度和高度"
+    },
+    {
       "id": 16,
-      "title": "",
+      "title": "let与var区别，正确且完整的是？",
       "items": [
-        "",
-        "",
-        "",
-        ""
+        "let有变量提升，var没有",
+        "let有局部作用域,var没有",
+        "let存在声明覆盖、变量提升问题，var无声明覆盖、变量提升问题，有局部作用域",
+        "var存在声明覆盖、变量提升问题，let无声明覆盖、变量提升问题，有局部作用域"
       ],
       "answer": 3,
-      "reason": ""
-    }, {
+      "reason": "var存在声明覆盖、变量提升问题，let无声明覆盖、变量提升问题，有局部作用域"
+    },
+    {
       "id": 17,
-      "title": "",
+      "title": "关于JSON.parse(JSON.stringify())拷贝的缺陷，正确的是？",
       "items": [
-        "",
-        "",
-        "",
-        ""
+        "不能解决循环引用的问题，不能拷贝特殊对象(undefined Function RegExp、BigInt、Date、Set、Map)",
+        "不能解决循环引用的问题，但能拷贝特殊对象(undefined Function RegExp、BigInt、Date、Set、Map)",
+        "能解决循环引用的问题，但不能拷贝特殊对象(undefined Function RegExp、BigInt、Date、Set、Map)",
+        "能解决循环引用的问题，也能拷贝特殊对象(undefined Function RegExp、BigInt、Date、Set、Map)",
       ],
       "answer": 0,
-      "reason": ""
-    }, {
+      "reason": "不能解决循环引用的问题，不能拷贝特殊对象(undefined Function RegExp、BigInt、Date、Set、Map)"
+    },
+    {
       "id": 18,
-      "title": "",
+      "title": "关于单向数据流优点和缺点，正确的是？",
       "items": [
-        "",
-        "",
-        "",
-        ""
+        "优点：状态改变可追溯；变化可预测；易调试。缺点：可维护性差；不易理解",
+        "优点：易调试。缺点：变化不可预测；不易调试",
+        "优点：新数据能自动更新；代码量缩减；代码便捷。缺点：状态改变难追溯；可维护性弱，不易理解；变化不可预测；不易调试",
+        "优点：状态改变可追溯；可维护性强；易理解；变化可预测；易调试。缺点：新数据不能自动更新；代码量上升；代码繁琐"
       ],
       "answer": 3,
-      "reason": ""
-    }, {
+      "reason": `优点：
+      所有状态的改变可追溯；
+      可维护性强，容易理解；
+      状态变化可预测，容易调试。
+      缺点：
+      页面渲染完成后，有新数据不能自动更新
+      代码量上升，管理的严格要求，会显得代码繁琐。`
+    },
+    {
       "id": 19,
       "title": "",
       "items": [
@@ -268,7 +261,8 @@ module.exports = {
       ],
       "answer": 2,
       "reason": ""
-    }, {
+    },
+    {
       "id": 20,
       "title": "",
       "items": [
@@ -5574,617 +5568,3 @@ module.exports = {
   ]
 
 };
-
-
-/***/ }),
-/* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__App__);
-
-
-
-
-__WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */].config.productionTip = false;
-
-new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */]({
-  el: '#app',
-  template: '<App/>',
-  components: { App: __WEBPACK_IMPORTED_MODULE_1__App___default.a }
-});
-
-/***/ }),
-/* 6 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__data_js__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__data_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__data_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_model_vue__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_model_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_model_vue__);
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'app',
-  components: {
-    'li-model': __WEBPACK_IMPORTED_MODULE_1__components_model_vue___default.a
-  },
-  data: function data() {
-    return {
-      data: __WEBPACK_IMPORTED_MODULE_0__data_js___default.a.list.filter(function (x) {
-        return x.title.length;
-      }),
-      qIndex: 0,
-      activeIndex: -1,
-      rightIndex: -1,
-      errorIndex: -1,
-      questionList: [],
-      ansState: false,
-      collectionList: [],
-      collectHtmlData: [],
-      collectNum: 0,
-      errorHtmlData: [],
-      errNum: 0,
-      collectionState: false,
-      collectionText: '收藏',
-      toast: false,
-      toastText: '',
-      allQuestionState: []
-    };
-  },
-
-  watch: {
-    qIndex: function qIndex(n, o) {
-      this.qIndex = n;
-      this.qIndexChange();
-    }
-  },
-  mounted: function mounted() {
-    for (var i = 0; i < this.data.length; i++) {
-      this.collectionList.push(false);
-      this.allQuestionState.push({ id: i, state: 1 });
-    }
-  },
-
-  methods: {
-    checkEvent: function checkEvent(num) {
-      var i = this.qIndex;
-      if (!this.questionList[i]) {
-        this.activeIndex = num;
-        if (this.data[i].answer === num) {
-          this.rightIndex = num;
-          this.questionList[i] = { userAns: num, rightAns: num };
-          this.allQuestionState[i].state = 2;
-        } else {
-          this.errorIndex = num;
-          this.rightIndex = this.data[i].answer;
-          this.questionList[i] = { userAns: num, rightAns: this.data[i].answer };
-          this.errorHtmlData.push(i + 1);
-          this.allQuestionState[i].state = 3;
-        }
-      }
-    },
-    preEvent: function preEvent() {
-      if (this.qIndex !== 0) {
-        this.qIndex -= 1;
-        this.activeIndex = -1;
-        this.rightIndex = -1;
-        this.errorIndex = -1;
-        this.ansState = false;
-      }
-    },
-    qIndexChange: function qIndexChange() {
-      var i = this.qIndex;
-      this.activeIndex = -1;
-      this.rightIndex = -1;
-      this.errorIndex = -1;
-
-      if (this.questionList[i]) {
-        if (this.questionList[i].rightAns === this.questionList[i].userAns) {
-          this.rightIndex = this.questionList[i].rightAns;
-        } else {
-          this.rightIndex = this.questionList[i].rightAns;
-          this.errorIndex = this.questionList[i].userAns;
-        }
-      }
-      if (this.collectionList[i]) {
-        this.collectionState = true;
-        this.collectionText = '取消收藏';
-      } else {
-        this.collectionState = false;
-        this.collectionText = '收藏';
-      }
-    },
-    nextEvent: function nextEvent() {
-      if (this.data.length > this.qIndex + 1) {
-        this.qIndex += 1;
-        this.activeIndex = -1;
-        this.rightIndex = -1;
-        this.errorIndex = -1;
-        this.ansState = false;
-      } else {
-        this.showToast('没有下一题了');
-      }
-    },
-    answerEvent: function answerEvent() {
-      if (this.questionList[this.qIndex]) this.ansState = !this.ansState;else this.showToast('未做题目不能看答案');
-    },
-    collectionEvent: function collectionEvent() {
-      if (this.collectionState) {
-        this.collectionList[this.qIndex] = false;
-        this.collectionState = !this.collectionState;
-        this.collectionText = '收藏';
-      } else {
-        this.collectionList[this.qIndex] = true;
-        this.collectionState = !this.collectionState;
-        this.collectionText = '取消收藏';
-      }
-      this.collectNum = this.getCollectList().length;
-    },
-    getCollectList: function getCollectList() {
-      var a = [];
-      for (var i = 0; i < this.collectionList.length; i++) {
-        if (this.collectionList[i]) {
-          a.push(i + 1);
-        }
-      }
-      return a;
-    },
-    collectListEvent: function collectListEvent() {
-      this.collectHtmlData = this.getCollectList();
-      if (this.collectHtmlData.length > 0) this.$refs.collectList.modelOpen();else this.showToast('您当前还没有收藏题目');
-    },
-    showToast: function showToast(str) {
-      var me = this;
-      me.toast = true;
-      me.toastText = str;
-      setTimeout(function () {
-        me.toast = false;
-      }, 2000);
-    },
-    listEvent: function listEvent() {
-      this.$refs.list.modelOpen();
-    },
-    errorListEvent: function errorListEvent() {
-      if (this.errorHtmlData.length > 0) this.$refs.error.modelOpen();else this.showToast('您当前还没有错题');
-    },
-    errInEvent: function errInEvent(num) {
-      this.$refs.error.modelClose();
-      this.qIndex = num;
-    },
-    collectInEvent: function collectInEvent(num) {
-      this.$refs.collectList.modelClose();
-      this.qIndex = num;
-    },
-    allQuestionEvent: function allQuestionEvent(num) {
-      this.$refs.list.modelClose();
-      this.qIndex = num;
-    }
-  }
-});
-
-/***/ }),
-/* 7 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'vModel',
-  created: function created() {
-    console.log(this.type);
-  },
-  props: ['isHeadShow', 'type'],
-  data: function data() {
-    return {
-      isModelShow: false
-    };
-  },
-
-  methods: {
-    popupClick: function popupClick() {},
-    modelClose: function modelClose() {
-      this.isModelShow = false;
-    },
-    modelOpen: function modelOpen() {
-      this.isModelShow = true;
-    },
-    modelBgHide: function modelBgHide() {
-      if (this.type === 'pop') {
-        this.modelClose();
-      }
-    },
-    alert_BtnEvent: function alert_BtnEvent() {
-      this.modelClose();
-      this.$emit('alertEvent');
-    },
-    confirm_BtnEvent: function confirm_BtnEvent(num) {
-      this.modelClose();
-      this.$emit('confirmEvent', num);
-    }
-  }
-});
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/* styles */
-__webpack_require__(9)
-
-var Component = __webpack_require__(1)(
-  /* script */
-  __webpack_require__(7),
-  /* template */
-  __webpack_require__(15),
-  /* scopeId */
-  "data-v-ba827cb4",
-  /* cssModules */
-  null
-)
-
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('div', {
-    staticClass: "box"
-  }, [_c('div', {
-    staticClass: "question"
-  }, [_c('div', [_c('h5', [_vm._v(_vm._s(_vm.qIndex + 1) + ". " + _vm._s(_vm.data[_vm.qIndex].title))]), _vm._v(" "), _c('ul', _vm._l((_vm.data[_vm.qIndex].items), function(a, index1) {
-    return _c('li', {
-      class: {
-        active: _vm.activeIndex === index1,
-        color1: index1 === _vm.rightIndex,
-        color2: index1 === _vm.errorIndex
-      },
-      on: {
-        "click": function($event) {
-          return _vm.checkEvent(index1)
-        }
-      }
-    }, [(index1 === 0) ? _c('span', {
-      class: [{
-        sign1: index1 === _vm.rightIndex
-      }, {
-        sign2: index1 === _vm.errorIndex
-      }, 'sign']
-    }, [_vm._v("A")]) : _vm._e(), _vm._v(" "), (index1 === 1) ? _c('span', {
-      class: [{
-        sign1: index1 === _vm.rightIndex
-      }, {
-        sign2: index1 === _vm.errorIndex
-      }, 'sign']
-    }, [_vm._v("B")]) : _vm._e(), _vm._v(" "), (index1 === 2) ? _c('span', {
-      class: [{
-        sign1: index1 === _vm.rightIndex
-      }, {
-        sign2: index1 === _vm.errorIndex
-      }, 'sign']
-    }, [_vm._v("C")]) : _vm._e(), _vm._v(" "), (index1 === 3) ? _c('span', {
-      class: [{
-        sign1: index1 === _vm.rightIndex
-      }, {
-        sign2: index1 === _vm.errorIndex
-      }, 'sign']
-    }, [_vm._v("D")]) : _vm._e(), _vm._v(" "), (index1 === 4) ? _c('span', {
-      class: [{
-        sign1: index1 === _vm.rightIndex
-      }, {
-        sign2: index1 === _vm.errorIndex
-      }, 'sign']
-    }, [_vm._v("E")]) : _vm._e(), _vm._v(" "), (index1 === 5) ? _c('span', {
-      class: [{
-        sign1: index1 === _vm.rightIndex
-      }, {
-        sign2: index1 === _vm.errorIndex
-      }, 'sign']
-    }, [_vm._v("F")]) : _vm._e(), _vm._v(" "), (index1 === 6) ? _c('span', {
-      class: [{
-        sign1: index1 === _vm.rightIndex
-      }, {
-        sign2: index1 === _vm.errorIndex
-      }, 'sign']
-    }, [_vm._v("G")]) : _vm._e(), _vm._v(" "), (index1 === 7) ? _c('span', {
-      class: [{
-        sign1: index1 === _vm.rightIndex
-      }, {
-        sign2: index1 === _vm.errorIndex
-      }, 'sign']
-    }, [_vm._v("H")]) : _vm._e(), _vm._v(" " + _vm._s(a) + "\n          ")])
-  }), 0)])])]), _vm._v(" "), _c('div', {
-    staticClass: "btn-box"
-  }, [_c('div', {
-    staticClass: "left"
-  }, [_c('div', {
-    class: [{
-      button: _vm.qIndex !== 0
-    }, {
-      button1: _vm.qIndex === 0
-    }],
-    on: {
-      "click": _vm.preEvent
-    }
-  }, [_vm._v("上一题")])]), _vm._v(" "), _c('div', {
-    staticClass: "right"
-  }, [_c('div', {
-    class: [{
-      button: _vm.qIndex !== _vm.data.length - 1
-    }, {
-      button1: _vm.qIndex === _vm.data.length - 1
-    }],
-    on: {
-      "click": _vm.nextEvent
-    }
-  }, [_vm._v("\n        下一题\n      ")])])]), _vm._v(" "), _c('transition', {
-    attrs: {
-      "name": "explain"
-    }
-  }, [_c('div', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.ansState),
-      expression: "ansState"
-    }],
-    staticClass: "explain"
-  }, [_c('p', [_c('span', {
-    staticStyle: {
-      "color": "#00a400"
-    }
-  }, [_vm._v("最佳解释：")]), _vm._v(_vm._s(_vm.data[_vm.qIndex].reason))])])]), _vm._v(" "), _c('div', {
-    staticStyle: {
-      "width": "100%",
-      "height": "50px"
-    }
-  }), _vm._v(" "), _c('transition', {
-    attrs: {
-      "name": "toast"
-    }
-  }, [(_vm.toast) ? _c('div', {
-    staticClass: "toast"
-  }, [_c('div', {
-    staticClass: "main"
-  }, [_vm._v(_vm._s(_vm.toastText))])]) : _vm._e()]), _vm._v(" "), _c('div', {
-    staticClass: "fixed",
-    on: {
-      "click": _vm.listEvent
-    }
-  }), _vm._v(" "), _c('div', {
-    staticClass: "footer"
-  }, [_c('div', {
-    class: ['btn', {
-      btn1: _vm.collectionState
-    }],
-    on: {
-      "click": _vm.collectionEvent
-    }
-  }, [_vm._v(_vm._s(_vm.collectionText))]), _vm._v(" "), _c('div', {
-    staticClass: "btn",
-    on: {
-      "click": _vm.answerEvent
-    }
-  }, [_vm._v("看答案")]), _vm._v(" "), _c('div', {
-    staticClass: "btn",
-    on: {
-      "click": _vm.collectListEvent
-    }
-  }, [_vm._v("收藏夹"), (_vm.collectNum) ? _c('span', [_vm._v("(" + _vm._s(_vm.collectNum) + ")")]) : _vm._e()]), _vm._v(" "), _c('div', {
-    staticClass: "btn",
-    on: {
-      "click": _vm.errorListEvent
-    }
-  }, [_vm._v("错题本"), (_vm.errorHtmlData.length) ? _c('span', [_vm._v("(" + _vm._s(_vm.errorHtmlData.length) + ")")]) : _vm._e()])]), _vm._v(" "), _c('li-model', {
-    ref: "collectList",
-    staticClass: "collectList",
-    attrs: {
-      "type": "pop"
-    }
-  }, [_c('div', {
-    attrs: {
-      "slot": "modalbody"
-    },
-    slot: "modalbody"
-  }, [_c('h5', [_vm._v("收藏夹")]), _vm._v(" "), _c('ul', _vm._l((_vm.collectHtmlData), function(item) {
-    return _c('li', [_c('div', {
-      staticClass: "item right",
-      on: {
-        "click": function($event) {
-          return _vm.collectInEvent(item - 1)
-        }
-      }
-    }, [_vm._v(_vm._s(item))])])
-  }), 0)]), _vm._v(" "), _c('div', {
-    attrs: {
-      "slot": "modelfoot"
-    },
-    slot: "modelfoot"
-  })]), _vm._v(" "), _c('li-model', {
-    ref: "list",
-    staticClass: "collectList",
-    attrs: {
-      "type": "pop"
-    }
-  }, [_c('div', {
-    attrs: {
-      "slot": "modalbody"
-    },
-    slot: "modalbody"
-  }, [_c('h5', [_vm._v("答题概览")]), _vm._v(" "), _c('ul', _vm._l((_vm.allQuestionState), function(item) {
-    return _c('li', [(item.state === 1) ? _c('div', {
-      staticClass: "item",
-      on: {
-        "click": function($event) {
-          return _vm.allQuestionEvent(item.id)
-        }
-      }
-    }, [_vm._v(_vm._s(item.id + 1))]) : _vm._e(), _vm._v(" "), (item.state === 2) ? _c('div', {
-      staticClass: "item right",
-      on: {
-        "click": function($event) {
-          return _vm.allQuestionEvent(item.id)
-        }
-      }
-    }, [_vm._v(_vm._s(item.id + 1))]) : _vm._e(), _vm._v(" "), (item.state === 3) ? _c('div', {
-      staticClass: "item error",
-      on: {
-        "click": function($event) {
-          return _vm.allQuestionEvent(item.id)
-        }
-      }
-    }, [_vm._v(_vm._s(item.id + 1))]) : _vm._e()])
-  }), 0)]), _vm._v(" "), _c('div', {
-    attrs: {
-      "slot": "modelfoot"
-    },
-    slot: "modelfoot"
-  })]), _vm._v(" "), _c('li-model', {
-    ref: "error",
-    staticClass: "collectList",
-    attrs: {
-      "type": "pop"
-    }
-  }, [_c('div', {
-    attrs: {
-      "slot": "modalbody"
-    },
-    slot: "modalbody"
-  }, [_c('h5', [_vm._v("错题本")]), _vm._v(" "), _c('ul', _vm._l((_vm.errorHtmlData), function(item) {
-    return _c('li', [_c('div', {
-      staticClass: "item error",
-      on: {
-        "click": function($event) {
-          return _vm.errInEvent(item - 1)
-        }
-      }
-    }, [_vm._v(_vm._s(item))])])
-  }), 0)]), _vm._v(" "), _c('div', {
-    attrs: {
-      "slot": "modelfoot"
-    },
-    slot: "modelfoot"
-  })])], 1)
-},staticRenderFns: []}
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('transition', {
-    attrs: {
-      "name": "animateBase"
-    }
-  }, [_c('div', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.isModelShow),
-      expression: "isModelShow"
-    }],
-    staticClass: "screen1",
-    on: {
-      "click": _vm.modelBgHide
-    }
-  }, [_c('div', {
-    staticClass: "model-box"
-  }, [_c('div', {
-    staticClass: "model"
-  }, [_c('div', {
-    staticClass: "main",
-    on: {
-      "click": function($event) {
-        $event.stopPropagation();
-        return _vm.popupClick.apply(null, arguments)
-      }
-    }
-  }, [(_vm.type == 'pop') ? _c('div', {
-    staticClass: "pop"
-  }, [_c('div', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.isHeadShow),
-      expression: "isHeadShow"
-    }],
-    staticClass: "head"
-  }, [_c('span', {
-    staticClass: "title"
-  }, [_vm._v("弹出窗口")]), _vm._v(" "), _c('span', {
-    staticClass: "close",
-    on: {
-      "click": function($event) {
-        $event.stopPropagation();
-        return _vm.modelClose.apply(null, arguments)
-      }
-    }
-  }, [_vm._v("x")])]), _vm._v(" "), _c('div', {
-    staticClass: "body"
-  }, [_vm._t("modalbody")], 2), _vm._v(" "), _c('div', {
-    staticClass: "foot"
-  }, [_vm._t("modalfoot")], 2)]) : _vm._e(), _vm._v(" "), (_vm.type == 'alert') ? _c('div', [_c('div', {
-    staticClass: "alert"
-  }, [_c('div', {
-    staticClass: "top"
-  }, [_vm._t("alert")], 2), _vm._v(" "), _c('div', {
-    staticClass: "bottom"
-  }, [_c('button', {
-    on: {
-      "click": _vm.alert_BtnEvent
-    }
-  }, [_vm._v("确 认")])])])]) : _vm._e(), _vm._v(" "), (_vm.type == 'confirm') ? _c('div', [_c('div', {
-    staticClass: "confirm"
-  }, [_c('div', {
-    staticClass: "top"
-  }, [_vm._t("confirm")], 2), _vm._v(" "), _c('div', {
-    staticClass: "bottom"
-  }, [_c('button', {
-    staticClass: "radius-left",
-    on: {
-      "click": function($event) {
-        return _vm.confirm_BtnEvent(1)
-      }
-    }
-  }, [_vm._v("确 认")]), _vm._v(" "), _c('button', {
-    staticClass: "radius-right",
-    on: {
-      "click": function($event) {
-        return _vm.confirm_BtnEvent(0)
-      }
-    }
-  }, [_vm._v("取 消")])])])]) : _vm._e()])])])])])
-},staticRenderFns: []}
-
-/***/ })
-],[5]);
-//# sourceMappingURL=app.b1f0c0f97cfa63ca402f.js.map
